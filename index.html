@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nice to Meet You 😊</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+  /* Reset and basics */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #fcb69f, #f9a8d4, #c084fc);
+    font-family: 'Comfortaa', cursive, Arial, sans-serif;
+    color: #4a3f35;
+    line-height: 1.5;
+  }
+  a {
+    color: #fce7f3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover {
+    color: #f9a8d4;
+  }
+
+  header {
+    background: linear-gradient(90deg, #d946ef, #f43f5e, #fb7185);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(244,114,182,0.35);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  header h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    margin: 0;
+    color: #ffe4f0;
+    letter-spacing: 4px;
+    text-shadow: 1px 1px 3px #9e3f60;
+  }
+  header p.subtitle {
+    margin-top: 0.3rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #f9a8d4;
+    font-style: italic;
+  }
+
+  main.container {
+    max-width: 700px;
+    margin: 2rem auto 6rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(244,114,182,0.3);
+    padding: 2.5rem 2.5rem 3rem;
+  }
+  section {
+    margin-bottom: 3.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    color: #d946ef;
+    margin-bottom: 1.4rem;
+    border-bottom: 3px solid #f9a8d4;
+    padding-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  p {
+    font-size: 1.15rem;
+    color: #4a3f35;
+  }
+
+  /* About Me */
+  #about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  #about img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #f9a8d422;
+    margin-bottom: 1.2rem;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+  }
+  #about img:hover {
+    transform: scale(1.05) rotate(-5deg);
+  }
+
+  /* Fun Facts */
+  #fun-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .fact {
+    background: #c7a8f922;
+    border-radius: 18px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 10px 30px rgba(244,114,182,0.15);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #9e3f60;
+    user-select: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  .fact:hover {
+    background: #f9a8d4aa;
+  }
+
+  /* Hobbies */
+  #hobbies ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  #hobbies li {
+    background: #fbb6ef55;
+    border: 2px solid #f9a8d4aa;
+    border-radius: 20px;
+    padding: 0.7rem 1.3rem;
+    font-weight: 600;
+    color: #9e3f60;
+    cursor: default;
+    transition: background-color 0.3s ease;
+  }
+  #hobbies li:hover {
+    background-color: #d4a8f944;
+    color: white;
+  }
+
+  /* Contact */
+  #contact {
+    text-align: center;
+  }
+  #contact p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #d946ef;
+  }
+  #contact .btn-contact {
+    background: #d946ef;
+    color: white;
+    border: none;
+    padding: 0.85rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(217,70,239,0.6);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    user-select: none;
+  }
+  #contact .btn-contact:hover {
+    background: #f472b6;
+    transform: scale(1.05);
+  }
+
+  /* Footer */
+  footer {
+    background: linear-gradient(90deg, #d946efcc, #f43f5ecc, #fb7185cc);
+    color: #ffe4f0;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    user-select: none;
+  }
+  footer a {
+    color: #ffe4f0cc;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 0 0.6rem;
+    transition: color 0.3s ease;
+  }
+  footer a:hover {
+    color: #f9a8d4;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+    main.container {
+      margin: 1.5rem 1rem 4rem;
+      padding: 2rem 1.5rem 2.5rem;
+    }
+    #fun-facts {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+    #hobbies ul {
+      gap: 0.7rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Hi, I'am Elyasar Pangalinan</h1>
+  <p class="subtitle">Nice to meet you 😊</p>
+</header>
+
+<main class="container">
+  <section id="about" aria-label="About
+    <p>
+      I love to create, explore, and share meaningful moments. Here’s a little bit about me — I hope we can connect, chat, and maybe create some magic together!
+    </p>
+  </section>
+
+  <section id="fun-facts" aria-label="Fun facts about me">
+    <h2>Fun Facts</h2>
+    <div class="fact" title="Loves sunsets and beach walks">🌅 Sunset lover</div>
+    <div class="fact" title="Enjoys cooking and baking">👨‍🍳 Amateur chef</div>
+    <div class="fact" title="Always learning new coding tricks">💻 Coding enthusiast</div>
+    <div class="fact" title="Fond of dogs and animals">🐶 Dog person</div>
+  </section>
+
+  <section id="hobbies" aria-label="My hobbies">
+    <h2>Hobbies</h2>
+    <ul>
+      <li>Photography 📸</li>
+      <li>Netflix & Chill 🍿</li>
+      <li>Traveling ✈️</li>
+      <li>Reading books 📚</li>
+      <li>Listening to music 🎵</li>
+    </ul>
+  </section>
+
+  <section id="contact" aria-label="Contact me">
+    <h2>Let's Chat!</h2>
+    <p>If you feel like saying hi, I'm just one click away!</p>
+    <button class="btn-contact" onclick="window.open('https://www.instagram.com/yourusername', '_blank')">Say Hi on Instagram ❤️</button>
+  </section>
+</main>
+
+<footer>
+  Made with ❤️ by Your Name | 
+  <a href="https://www.instagram.com/_elyaspnglinan?igsh=c3dzY3BwbGhkamhn target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a> | 
+  <a href="https://www.tiktok.com/@elyass6_?_t=ZS-8wtAdshxIzh&_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
+</footer>
+
+</body>
+</html>
